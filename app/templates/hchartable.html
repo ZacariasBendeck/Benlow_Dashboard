@@ -1,0 +1,208 @@
+{% extends 'base.html' %}
+{% block content %}
+
+		<!-- MAIN PANEL -->
+		<div id="main" role="main">
+
+			<!-- RIBBON -->
+			<div id="ribbon">
+
+				<span class="ribbon-button-alignment"> 
+					<span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh"  rel="tooltip" data-placement="bottom" data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings." data-html="true">
+						<i class="fa fa-refresh"></i>
+					</span> 
+				</span>
+
+				<!-- breadcrumb -->
+				<ol class="breadcrumb">
+					<li>Home</li><li>Graphs</li><li>HighChartTable</li>
+				</ol>
+				<!-- end breadcrumb -->
+
+				<!-- You can also add more buttons to the
+				ribbon for further usability
+
+				Example below:
+
+				<span class="ribbon-button-alignment pull-right">
+				<span id="search" class="btn btn-ribbon hidden-xs" data-title="search"><i class="fa-grid"></i> Change Grid</span>
+				<span id="add" class="btn btn-ribbon hidden-xs" data-title="add"><i class="fa-plus"></i> Add</span>
+				<span id="search" class="btn btn-ribbon" data-title="search"><i class="fa-search"></i> <span class="hidden-mobile">Search</span></span>
+				</span> -->
+
+			</div>
+			<!-- END RIBBON -->
+			
+			
+
+			<!-- MAIN CONTENT -->
+			<div id="content">
+
+				<!-- Bread crumb is created dynamically -->
+				<!-- row -->
+				<div class="row">
+					
+					<!-- col -->
+					<div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+						<h1 class="page-title txt-color-blueDark">
+							
+							<!-- PAGE HEADER -->
+							<i class="fa-fw fa fa-home"></i> 
+								Graphs 
+							<span>>  
+								Highchart Table
+							</span>
+						</h1>
+					</div>
+					<!-- end col -->
+					
+
+
+				<!--
+					The ID "widget-grid" will start to initialize all widgets below 
+					You do not need to use widgets if you dont want to. Simply remove 
+					the <section></section> and you can use wells or panels instead 
+					-->
+
+				<!-- widget grid -->
+				<section id="widget-grid" class="">
+
+					<!-- row -->
+
+					<div class="row">
+
+						<div class="col-sm-12"> 
+							
+							<!-- alert.html goes here -->
+
+							<div class="col-sm-12 well"> 
+								<div class="col-sm-6">
+									<table class="highchart table table-hover table-bordered" data-graph-container=".. .. .highchart-container2" data-graph-type="column">
+						              <caption>Best Vendor Vs Prior Year</caption>
+						              <thead>
+						                <tr>
+						                  <th>{{header[0]}}</th>
+						                  <th class="">{{header[8]}}</th>
+						                  <th class="">{{header[17]}}</th>
+						                  <th class="">{{header[11]}}</th>
+						                  <th class="">{{header[19]}}</th>
+						                </tr>
+						              </thead>
+						              <tbody>
+						                {% for item in data %}
+						                <tr>
+						                  <td>{{item[0]}}</td>
+						                  <td class="">{{item[8]}}</td>
+						                  <td class="">{{item[17]}}</td>
+						                  <td class="">{{item[11]}}</td>
+						                  <td class="">{{item[19]}}</td>
+						                </tr>
+						                {% endfor %}
+						              </tbody>
+						            </table>
+								</div>
+								<div class="col-sm-6">
+									<div class="highchart-container2"></div>
+								</div>
+							</div>
+							
+							<div class="col-sm-12 well"> 
+								<div class="col-sm-6">
+									<table class="highchart table table-hover table-bordered" data-graph-container=".. .. .highchart-container" data-graph-type="line">
+						              <caption>Department Profit by Month</caption>
+						              <thead>
+						                <tr>
+						                  <th>Month</th>
+						                  <th>{{header2[1]}}</th>
+						                  <th>{{header2[2]}}</th>
+						                  <th>{{header2[3]}}</th>
+						                  <th>{{header2[4]}}</th>
+						                  <th>{{header2[5]}}</th>
+						                  <th>{{header2[6]}}</th>
+						                  <th>{{header2[7]}}</th>
+						                </tr>
+						              </thead>
+						              <tbody>
+						                {% for item in data2 %}
+						                <tr>
+						                  <td>{{item[0]}}</td>
+						                  <td>{{item[1]}}</td>
+						                  <td>{{item[2]}}</td>
+						                  <td>{{item[3]}}</td>
+						                  <td>{{item[4]}}</td>
+						                  <td>{{item[5]}}</td>
+						                  <td>{{item[6]}}</td>
+						                  <td>{{item[7]}}</td>
+						                </tr>
+						                {% endfor %}
+						              </tbody>
+						            </table>
+								</div>
+								<div class="col-sm-6">
+									<div class="highchart-container"></div>
+								</div>
+							</div>
+
+							<div class="col-sm-12 well"> 
+								<div class="col-sm-6">
+									<table class="highchart table table-hover table-bordered" data-graph-container=".. .. .highchart-container3" data-graph-type="column">
+						              <caption>Column + area example</caption>
+						              <thead>
+						                <tr>
+						                  <th>Month</th>
+						                  <th>Sales</th>
+						                  <th data-graph-type="area">Benefits</th>
+						                </tr>
+						              </thead>
+						              <tbody>
+						                <tr>
+						                  <td>January</td>
+						                  <td>8000</td>
+						                  <td>2000</td>
+						                </tr>
+						                <tr>
+						                  <td>February</td>
+						                  <td>12000</td>
+						                  <td>3000</td>
+						                </tr>
+						                <tr>
+						                  <td>March</td>
+						                  <td>18000</td>
+						                  <td>4000</td>
+						                </tr>
+						                <tr>
+						                  <td>April</td>
+						                  <td>2000</td>
+						                  <td>-1000</td>
+						                </tr>
+						                <tr>
+						                  <td>May</td>
+						                  <td>500</td>
+						                  <td>-2500</td>
+						                </tr>
+						              </tbody>
+						            </table>
+								</div>
+								<div class="col-sm-6 ">
+									<div class="highchart-container3"></div>
+								</div>
+							</div>
+
+						</div>
+						
+						<!-- end row -->
+
+					</div>
+
+					<!-- end row -->
+
+				</section>
+				<!-- end widget grid -->
+
+			</div>
+			<!-- END MAIN CONTENT -->
+
+		</div>
+		<!-- END MAIN PANEL -->
+
+{% endblock %}

@@ -1,0 +1,61 @@
+								<header>
+									<span class="widget-icon"> <i class="fa fa-table"></i> </span>
+									<h2>ZAPATO DE DAMA MONTH TO DATE </h2>
+				
+								</header>
+				
+								<!-- widget div-->
+								<div>
+				
+									<!-- widget edit box -->
+									<div class="jarviswidget-editbox">
+										<!-- This area used as dropdown edit box -->
+				
+									</div>
+									<!-- end widget edit box -->
+				
+									<!-- widget content -->
+									<div class="widget-body no-padding">
+				
+										<table id="dt_basic" class="table table-striped table-bordered table-hover" width="100%">
+											<thead>			                
+												<tr>
+													<th data-hide="phone">{{header[0]}}</th>
+													<th data-class="expand"><i class="fa fa-fw text-muted hidden-md hidden-sm hidden-xs"></i>Fotos</th>
+													<th data-hide="phone"><i class="fa fa-fw fa-phone text-muted hidden-md hidden-sm hidden-xs"></i>{{header[4]}}</th>
+													<th>{{header[5]}}</th>
+													<th>{{header[9]}}</th>
+													<th data-hide="phone,tablet"><i class="fa fa-fw fa-map-marker txt-color-blue hidden-md hidden-sm hidden-xs"></i>{{header[10]}}</th>
+													<th data-hide="phone,tablet">{{header[13]}}</th>
+													<th data-hide="phone,tablet"><i class="fa fa-fw fa-calendar txt-color-blue hidden-md hidden-sm hidden-xs"></i>{{header[14]}}</th>
+													<th data-hide="phone,tablet">{{header[16]}}</th>
+													<th data-hide="phone,tablet">{{header[17]}}</th>
+												</tr>
+											</thead>
+											<tbody>
+												{% for item in data %}
+												<tr>
+													<td>{{item[0]}}</td>
+													<td><img src="static/Ricspics/{{item[0].replace(" ","")}}.jpg" alt="" style="width:60px;height:60px;"></td>
+													<td>{{item[4]}}</td>
+													<td>{{item[5]}}</td>
+													<td>{{item[9]}}</td>
+													<td>{{item[10]}}</td>
+													<td>{{item[13]}}</td>
+													<td>{{item[14]}}</td>
+													<td>{{item[16]}}</td>
+													<td>{{item[17]}}</td>
+
+												</tr>
+												{% endfor %}
+											</tbody>
+										</table>
+
+									</div>
+									<!-- end widget content -->
+				
+								</div>
+								<!-- end widget div -->
+				
+							</div>
+							<!-- end widget -->
