@@ -8,13 +8,20 @@
 				<span> <!-- User image size is adjusted inside CSS, it should stay as it --> 
 					
 					<a href="javascript:void(0);" id="show-shortcut" data-action="toggleShortcut">
+					{%if 'username' not in session %}
 						<img src="img/avatars/sunny.png" alt="me" class="online" /> 
+
 						<span>
-							john.doe 
+						<a href="{{url_for('showLogin')}}">Login </a>
 						</span>
 						<i class="fa fa-angle-down"></i>
-					</a> 
+					{% else %}
+						<span>
+							Logged in
+						</span>
+					{% endif %}
 					
+					</a> 
 				</span>
 			</div>
 			<!-- end user info -->
