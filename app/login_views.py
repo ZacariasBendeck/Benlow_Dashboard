@@ -16,6 +16,7 @@ CLIENT_ID = json.loads(
     open('client_secrets.json', 'r').read())['web']['client_id']
 APPLICATION_NAME = "BenlowDashboard"
 
+
 # 'Create anti-forgery state token
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -60,7 +61,7 @@ def gconnect():
         response = make_response(json.dumps(result.get('error')), 500)
         response.headers['Content-Type'] = 'application/json'
 
-    print 
+    print
 
     # Verify that the access token is used for the intended user.
     gplus_id = credentials.id_token['sub']
@@ -129,9 +130,6 @@ def gconnect():
     flash("you are now logged in as %s" % login_session['username'])
     print "done!"
     return output
-
-
-
 
 
 # DISCONNECT - Revoke a current user's token and reset their login_session
